@@ -3,5 +3,5 @@
    Turn it on or off under Settings → Appearance → CSS snippets. No plugin needed.
    Generated from scripts/options.ts; edit that, not this file. */
 body {
-  --aw-stitching: off;
+  --aw-stitch: none;
 }

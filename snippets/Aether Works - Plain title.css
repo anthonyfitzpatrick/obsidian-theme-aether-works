@@ -4,5 +4,7 @@
    With this snippet on, a note keeps the ornament by listing "aw-title-ornament" in its cssclasses property.
    Generated from scripts/options.ts; edit that, not this file. */
 body {
-  --aw-title-ornament: off;
+  --aw-title-align: start;
+  --aw-title-kicker: none;
+  --aw-title-flourish: none;
 }

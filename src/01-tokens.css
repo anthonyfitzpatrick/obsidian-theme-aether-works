@@ -1,33 +1,18 @@
 /* Shared, mode-independent tokens. Colours live in the palettes (02, 03). */
 body {
-  /* Option switches, all "on" by default. A CSS snippet, a note's cssclasses or Style
-     Settings sets one to "off"; see scripts/options.ts, which generates all three. */
-  --aw-numerals: on;
-  --aw-fleurons: on;
-  --aw-title-ornament: on;
-  --aw-stitching: on;
+  /* The option variables (fonts, textures, stitching, numerals, bullets, title) get their
+     defaults from scripts/options.ts, which generates them into theme.css. */
 
   /* The embedded faces are declared by scripts/build.ts under "Aether …" family names, so
      they never collide with copies the user has installed. Each stack ends in a system
      fallback with the same character. */
-  --aw-face-display: "Aether Rye", "Aether Playfair", Georgia, serif;
   --aw-face-heading: "Aether Playfair", Georgia, "Times New Roman", serif;
   --aw-face-body: "Aether Fell", Georgia, serif;
   --aw-face-plaque: "Aether Cinzel", "Trajan Pro", Georgia, serif;
   --aw-face-mono: "Aether Typewriter", "Courier Prime", "Courier New", monospace;
 
-  /* What the components read. "Use Obsidian's fonts" points these back at Obsidian. */
-  --aw-font-display: var(--aw-face-display);
-  --aw-font-heading: var(--aw-face-heading);
-  --aw-font-plaque: var(--aw-face-plaque);
   /* Monospace goes through Obsidian's own slot, so a font the user picks still wins */
   --aw-font-mono: var(--font-monospace);
-
-  /* Obsidian's theme-level font slots. The user's own font choices still win. */
-  --font-interface-theme: var(--aw-face-body);
-  --font-text-theme: var(--aw-face-body);
-  --font-monospace-theme: var(--aw-face-mono);
-  --font-text-size: 17px;
 
   --radius-s: 3px;
   --radius-m: 4px;
@@ -68,12 +53,12 @@ body {
     linear-gradient(var(--aw-sheet-frame), var(--aw-sheet-frame)) right 6px / 42% 1px no-repeat,
     linear-gradient(var(--aw-sheet-frame-inner), var(--aw-sheet-frame-inner)) left 9px / 42% 1px no-repeat,
     linear-gradient(var(--aw-sheet-frame-inner), var(--aw-sheet-frame-inner)) right 9px / 42% 1px no-repeat;
-  --aw-leather-grain:
+  --aw-leather-pattern:
     radial-gradient(ellipse at 30% 10%, var(--aw-sheen-leather), transparent 55%),
     repeating-radial-gradient(circle at 20% 30%, var(--aw-grain) 0 1px, transparent 1px 4px),
     repeating-linear-gradient(45deg, var(--aw-grain) 0 2px, transparent 2px 6px),
     repeating-linear-gradient(-45deg, var(--aw-grain) 0 2px, transparent 2px 7px);
-  --aw-damask:
+  --aw-damask-pattern:
     radial-gradient(circle at 20px 20px, var(--aw-damask-ink) 0 2px, transparent 3px) 0 0 / 40px 40px,
     radial-gradient(circle at 0 0, var(--aw-damask-ink) 0 1.5px, transparent 2.5px) 0 0 / 40px 40px,
     repeating-linear-gradient(45deg, var(--aw-damask-ink) 0 1px, transparent 1px 20px),

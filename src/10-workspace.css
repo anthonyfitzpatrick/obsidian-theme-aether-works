@@ -33,7 +33,7 @@
 }
 
 :where(.workspace-split).mod-sidedock:not(.is-collapsed)::after {
-  content: "";
+  content: var(--aw-stitch);
   position: absolute;
   inset: 5px;
   z-index: 2;
@@ -45,27 +45,20 @@
     var(--aw-stitch-v) 100% 0 / 9px 16px repeat-y;
 }
 
-/* Every option is a variable (see scripts/options.ts); "off" lifts the ornament. */
-@container style(--aw-stitching: off) {
-  :where(.workspace-split).mod-sidedock:not(.is-collapsed)::after {
-    content: none;
-  }
-}
-
 /* Ribbon and the desk behind the editor: trellis damask on dark leather */
 .workspace-ribbon.mod-left,
 .workspace-split.mod-root {
   background: var(--aw-damask), var(--aw-leather-dark);
 }
 
-/* Title bar (custom frame) and the window chrome: engraved brass, Rye lettering */
+/* Title bar (custom frame, Windows and Linux): engraved brass, Cinzel lettering */
 .titlebar {
   background: var(--aw-brass-gradient-h);
   border-bottom: 1px solid var(--aw-brass-shadow);
 }
 
 .titlebar-text {
-  font-family: var(--aw-font-display);
+  font-family: var(--aw-font-plaque);
   letter-spacing: 0.12em;
   color: var(--aw-plaque-text);
 }
@@ -177,16 +170,10 @@
 }
 
 :where(.outline .tree-item-children > .tree-item) > .tree-item-self .tree-item-inner::before {
-  content: counter(aw-section, upper-roman) ". ";
+  content: var(--aw-outline-numeral);
   font-family: var(--aw-font-plaque);
   font-size: 0.75em;
   color: var(--aw-on-leather);
-}
-
-@container style(--aw-numerals: off) {
-  :where(.outline .tree-item-children > .tree-item) > .tree-item-self .tree-item-inner::before {
-    content: none;
-  }
 }
 
 /* Editor tabs: brass tags on the desk; the current one is copper */
@@ -236,7 +223,6 @@
 }
 
 :where(.mod-root) .view-header-title {
-  font-family: var(--aw-font-heading);
   font-style: italic;
   letter-spacing: 0.03em;
   color: var(--aw-plaque-text);

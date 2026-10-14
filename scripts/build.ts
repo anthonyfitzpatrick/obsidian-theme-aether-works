@@ -5,7 +5,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { EMBEDDED_FACES, type EmbeddedFace, LATIN_RANGE, LICENCE_TEXTS } from "./fonts.ts";
-import { optionClassRules, snippetCss, snippetFileName, styleSettingsBlock, THEME_OPTIONS } from "./options.ts";
+import { optionRules, snippetCss, snippetFileName, styleSettingsBlock, THEME_OPTIONS } from "./options.ts";
 import { projectRoot } from "./project.ts";
 
 const sourceDir = join(projectRoot, "src");
@@ -42,10 +42,10 @@ const fonts =
   EMBEDDED_FACES.map(fontFaceRule).join("\n") +
   "\n\n";
 const options =
-  "/* Options. Each is a variable the theme reads; these classes set it for a note (its\n" +
-  "   cssclasses property) or, through the optional Style Settings plugin, for the vault.\n" +
-  "   The CSS snippets in snippets/ do the same vault-wide with no plugin at all. */\n" +
-  optionClassRules() +
+  "/* Options: the variables the theme reads, with their defaults. The classes below apply an\n" +
+  "   option to a note (its cssclasses property) or, through the optional Style Settings\n" +
+  "   plugin, to the vault. The CSS snippets in snippets/ do it vault-wide with no plugin. */\n" +
+  optionRules() +
   "\n\n" +
   styleSettingsBlock() +
   "\n\n";

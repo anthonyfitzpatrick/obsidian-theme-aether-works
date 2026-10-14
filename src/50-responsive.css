@@ -87,7 +87,7 @@
 }
 
 .workspace-drawer::after {
-  content: "";
+  content: var(--aw-stitch);
   position: absolute;
   inset: 4px;
   z-index: 2;
@@ -97,12 +97,6 @@
     var(--aw-stitch-h) 0 100% / 16px 9px repeat-x,
     var(--aw-stitch-v) 0 0 / 9px 16px repeat-y,
     var(--aw-stitch-v) 100% 0 / 9px 16px repeat-y;
-}
-
-@container style(--aw-stitching: off) {
-  .workspace-drawer::after {
-    content: none;
-  }
 }
 
 .workspace-drawer-header,

@@ -1,4 +1,3 @@
-Copyright (c) 2011 by Sorkin Type Co (www.sorkintype.com),
 Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name "Playfair Display"
 Copyright (c) 2010, Igino Marini (mail@iginomarini.com)
 Copyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel)

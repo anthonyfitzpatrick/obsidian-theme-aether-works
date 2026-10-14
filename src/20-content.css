@@ -4,12 +4,12 @@
 .inline-title,
 .markdown-rendered h1,
 .HyperMD-header-1 {
-  text-align: center;
+  text-align: var(--aw-title-align);
   text-shadow: var(--aw-h1-glow);
 }
 
 .inline-title::before {
-  content: "— ✦ —";
+  content: var(--aw-title-kicker);
   display: block;
   padding-bottom: 0.3em;
   font-family: var(--aw-font-plaque);
@@ -24,7 +24,7 @@
    vertical margins; the gap above the flourish is padding the background skips. */
 .inline-title::after,
 .markdown-rendered h1::after {
-  content: "";
+  content: var(--aw-title-flourish);
   display: block;
   box-sizing: content-box;
   width: 60%;
@@ -34,21 +34,6 @@
   background: var(--aw-flourish);
   background-origin: content-box;
   background-clip: content-box;
-}
-
-/* Title ornament off: a plain, left-aligned title without kicker or flourish */
-@container style(--aw-title-ornament: off) {
-  .inline-title,
-  .markdown-rendered h1,
-  .HyperMD-header-1 {
-    text-align: start;
-  }
-
-  .inline-title::before,
-  .inline-title::after,
-  .markdown-rendered h1::after {
-    content: none;
-  }
 }
 
 /* Section headings: a Roman numeral, then a rule running to the margin */
@@ -64,7 +49,7 @@
 }
 
 .markdown-rendered h2::before {
-  content: counter(aw-h2, upper-roman) ".";
+  content: var(--aw-h2-numeral);
   font-family: var(--aw-font-plaque);
   font-size: 0.6em;
   color: var(--aw-copper);
@@ -76,12 +61,6 @@
   height: 1px;
   margin-left: 0.4em;
   background: linear-gradient(90deg, var(--aw-sheet-frame-inner), transparent);
-}
-
-@container style(--aw-numerals: off) {
-  .markdown-rendered h2::before {
-    content: none;
-  }
 }
 
 .markdown-rendered h4,
@@ -111,11 +90,11 @@
 
 /* Fleurons for unordered lists, in reading view and live preview */
 .list-bullet::after {
-  content: "❧";
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  background: none;
+  content: var(--aw-bullet);
+  width: var(--aw-bullet-size);
+  height: var(--aw-bullet-size);
+  border-radius: var(--aw-bullet-radius);
+  background: var(--aw-bullet-fill);
   font-size: 0.95em;
   line-height: 1;
   color: var(--aw-copper);
@@ -123,19 +102,7 @@
 
 /* Live preview sets the bullet flush against the text; nudge the wider fleuron back */
 :where(.markdown-source-view) .list-bullet::after {
-  transform: translateX(-0.35em);
-}
-
-@container style(--aw-fleurons: off) {
-  .list-bullet::after,
-  :where(.markdown-source-view) .list-bullet::after {
-    content: "";
-    transform: none;
-    width: var(--list-bullet-size);
-    height: var(--list-bullet-size);
-    border-radius: 50%;
-    background: var(--aw-copper);
-  }
+  transform: var(--aw-bullet-nudge);
 }
 
 /* Task checkboxes: copper valve knobs that turn verdigris when done.

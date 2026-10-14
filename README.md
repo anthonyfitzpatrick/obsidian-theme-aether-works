@@ -34,15 +34,14 @@ The [User Guide](USERGUIDE.md) walks through every part, with pictures.
 
 ## Typefaces
 
-The theme embeds five freely licensed typefaces (Latin characters only), so it looks the same offline:
+The theme embeds four freely licensed typefaces (Latin characters only), so it looks the same offline:
 
-- **Rye**, a Wild West poster face, for the window title bar on Windows and Linux.
 - **Playfair Display**, an 18th-century-style high-contrast serif, for titles, headings and tabs.
 - **IM Fell English**, a revival of 17th-century English printing type, for body text and the interface.
-- **Cinzel**, after Roman inscriptions, for engraved plates, buttons and table headings.
+- **Cinzel**, after Roman inscriptions, for engraved plates, buttons, table headings and the window title bar.
 - **Cutive Mono**, a typewriter face drawn from the Smith Premier of 1889, for code, tags and properties.
 
-All five are under the SIL Open Font License. Its full text and the fonts' copyright notices are inside `theme.css` and in [fonts/](fonts/README.md). Any font you choose under *Settings → Appearance* takes priority, and the *Use Obsidian's fonts* option turns all five off.
+All four are under the SIL Open Font License. Its full text and the fonts' copyright notices are inside `theme.css` and in [fonts/](fonts/README.md). Any font you choose under *Settings → Appearance* takes priority, and the *Use Obsidian's fonts* option turns all four off.
 
 ## Phones, tablets and small windows
 
@@ -62,7 +61,7 @@ Six options switch parts of the theme off. Each is a small CSS snippet that Obsi
 
 | Option | What it does | Per note (off / keep on) |
 | --- | --- | --- |
-| Use Obsidian's fonts | Your Obsidian fonts replace the five embedded typefaces | — |
+| Use Obsidian's fonts | Your Obsidian fonts replace the four embedded typefaces | — |
 | Plain leather | Flat colour instead of leather grain and damask | — |
 | No stitching | Removes the running stitch | — |
 | No Roman numerals | Unnumbered headings and outline | `aw-no-numerals` / `aw-numerals` |
@@ -86,12 +85,13 @@ Every text colour is tested against WCAG 2 in both modes. Body text, links, side
 ## Compatibility
 
 - **Obsidian 1.6 or later.**
-- The options and the narrow-pane adjustments use CSS container and style queries. They need:
-  - **Desktop:** Obsidian installer 1.4 or later (Electron 25). The installer version is shown in *Settings → General*.
-  - **iPhone and iPad:** iOS / iPadOS 18 or later.
-  - **Android:** Android System WebView 111 or later.
+- The options work on every version Obsidian 1.6 runs on: they are plain CSS variables.
+- The narrow-pane adjustments use CSS container queries, which need:
+  - **Desktop:** Obsidian installer 1.4 or later. The installer version is shown in *Settings → General*.
+  - **iPhone and iPad:** iOS / iPadOS 16 or later.
+  - **Android:** Android System WebView 105 or later.
 
-  On older versions the theme still works, but every ornament stays on and the options have no effect.
+  On older versions everything else works, including the options; pages just don't slim down in narrow panes.
 
 ## Installing
 

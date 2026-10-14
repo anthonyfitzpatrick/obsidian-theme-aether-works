@@ -15,7 +15,7 @@ An Obsidian community theme: a Victorian steampunk look in light and dark modes,
 ## Obsidian's theme guidelines (enforced by `.stylelintrc.json` and the tests)
 
 - **Variables first.** Shared tokens go under `body` (`src/01`). Colours go under `.theme-light` / `.theme-dark` in the palettes (`src/02`, `src/03`). Obsidian's own variables are mapped once, in `src/04`. Where Obsidian paints a state from a variable (menu highlights, sidebar text, icon colours), set that variable on the element rather than outranking Obsidian's rule.
-- **Low specificity.** stylelint caps selectors at `0,3,0`. Wrap context in `:where()`. Options are variables read through style queries, not body classes (see below).
+- **Low specificity.** stylelint caps selectors at `0,3,0`. Wrap context in `:where()`. Options are variables the theme reads, not body classes (see below).
 - **No `!important`, no remote assets, no `@import`, no `@font-face` in `src/`.** Fonts are embedded only by the build.
 - **No obfuscation, ads or telemetry.**
 - **Releases.** A GitHub release whose tag equals `manifest.json`'s version, with `manifest.json` and `theme.css` attached. `.github/workflows/release.yml` makes it, but only when a tag is pushed. Never push tags unless a release is explicitly requested.
@@ -26,7 +26,7 @@ An Obsidian community theme: a Victorian steampunk look in light and dark modes,
   - a CSS snippet per option in `snippets/` (vault-wide, through *Appearance → CSS snippets*)
   - the classes a note can list in `cssclasses`
   - an optional Style Settings block
-- Each option sets variables. The theme reads them: an on/off switch is honoured with `@container style(--aw-…: off)` around the override, so the defaults stay on where style queries aren't supported. Never style a Style Settings class directly. `tests/options.test.ts` enforces all of this.
+- Each option is a list of switches: a variable the theme reads with `var()`, its normal value and its applied value. The build writes the defaults into theme.css; never set a switch variable in `src/`. No style queries: Obsidian's directory flags them as only partly supported. Never style a Style Settings class directly. `tests/options.test.ts` enforces all of this.
 - Deploy copies the snippets into the vault's `.obsidian/snippets/`, where they arrive switched off.
 
 ## Anti-slop rules

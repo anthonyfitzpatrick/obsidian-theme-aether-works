@@ -22,9 +22,7 @@ export interface EmbeddedFace {
 }
 
 export const EMBEDDED_FACES: readonly EmbeddedFace[] = [
-  { family: "Aether Rye", designFamily: "Rye", file: "rye-latin.woff2", style: "normal", weight: "400", licence: "OFL-1.1" },
   { family: "Aether Playfair", designFamily: "Playfair Display", file: "playfair-display-latin.woff2", style: "normal", weight: "400 900", licence: "OFL-1.1" },
-  { family: "Aether Playfair", designFamily: "Playfair Display", file: "playfair-display-italic-latin.woff2", style: "italic", weight: "500", licence: "OFL-1.1" },
   { family: "Aether Fell", designFamily: "IM Fell English", file: "im-fell-english-latin.woff2", style: "normal", weight: "400", licence: "OFL-1.1" },
   { family: "Aether Fell", designFamily: "IM Fell English", file: "im-fell-english-italic-latin.woff2", style: "italic", weight: "400", licence: "OFL-1.1" },
   { family: "Aether Cinzel", designFamily: "Cinzel", file: "cinzel-latin.woff2", style: "normal", weight: "400 900", licence: "OFL-1.1" },

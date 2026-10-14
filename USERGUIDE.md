@@ -129,13 +129,12 @@ Aether Works carries its own typefaces inside `theme.css`, so it looks the same 
 | --- | --- | --- |
 | **IM Fell English** | A revival of 17th-century English printing type | Body text and the interface |
 | **Playfair Display** | A high-contrast serif in the late-18th-century style | Titles, headings, editor tabs |
-| **Cinzel** | Capitals after Roman inscriptions | Engraved plates, buttons, callout titles, table headings |
+| **Cinzel** | Capitals after Roman inscriptions | Engraved plates, buttons, callout titles, table headings, the window title bar on Windows and Linux |
 | **Cutive Mono** | A typewriter face drawn from the Smith Premier typewriter of 1889 | Code, tags, properties, the status bar |
-| **Rye** | A poster face of the Victorian frontier | The window title bar on Windows and Linux |
 
 Only the Latin character set is embedded. Text in other scripts falls back to your system's fonts.
 
-**Using your own fonts.** Fonts you choose under *Settings → Appearance* (interface font, text font and monospace font) take priority over the theme's. To turn all five embedded typefaces off at once, switch on the *Use Obsidian's fonts* option (see [Options](#options)).
+**Using your own fonts.** Fonts you choose under *Settings → Appearance* (interface font, text font and monospace font) take priority over the theme's. To turn all four embedded typefaces off at once, switch on the *Use Obsidian's fonts* option (see [Options](#options)).
 
 ## Options
 
@@ -143,7 +142,7 @@ Aether Works has six options. Each switches part of the theme off, and all of th
 
 | Option | What it does | Can be set per note |
 | --- | --- | --- |
-| Use Obsidian's fonts | Replaces the five embedded typefaces with your Obsidian font choices | No |
+| Use Obsidian's fonts | Replaces the four embedded typefaces with your Obsidian font choices | No |
 | Plain leather | Flat colour instead of leather grain and damask | No |
 | No stitching | Removes the running stitch around the sidebars and drawers | No |
 | No Roman numerals | Removes the numerals from section headings and the Outline | Yes |
@@ -216,18 +215,19 @@ Aether Works also adapts to the size of its window and of each pane:
 ## Compatibility
 
 - **Obsidian 1.6 or later.**
-- The options and the narrow-pane adjustments rely on modern CSS (container and style queries). They need:
-  - **Desktop:** Obsidian installer 1.4 or later, which uses Electron 25. *Settings → General* shows your installer version. If it's older, download the current installer from obsidian.md.
-  - **iPhone and iPad:** iOS or iPadOS 18 or later.
-  - **Android:** Android System WebView 111 or later. It updates through the Play Store.
+- The options work on every version Obsidian 1.6 runs on, because they are plain CSS variables.
+- The narrow-pane adjustments rely on CSS container queries. They need:
+  - **Desktop:** Obsidian installer 1.4 or later. *Settings → General* shows your installer version. If it's older, download the current installer from obsidian.md.
+  - **iPhone and iPad:** iOS or iPadOS 16 or later.
+  - **Android:** Android System WebView 105 or later. It updates through the Play Store.
 
-  On older versions everything else still works, but every ornament stays on and the options have no effect.
+  On older versions everything else still works, including the options; pages just don't slim down in narrow panes.
 
 ## Troubleshooting
 
 - **The theme isn't in the list.** The folder must be named exactly `Aether Works` and must hold both `manifest.json` and `theme.css`.
 - **An update or a snippet change doesn't show.** Obsidian reads a theme once. Switch to another theme and back, or restart Obsidian. For snippets, select the refresh button on the CSS snippets page.
-- **An option has no effect.** Check that the snippet is switched on, and that the note doesn't override it in its `cssclasses`. On older devices, see [Compatibility](#compatibility).
+- **An option has no effect.** Check that the snippet is switched on, that you've selected the refresh button on the CSS snippets page, and that the note doesn't override it in its `cssclasses`.
 - **My accent colour is ignored.** That's expected: the theme uses its own copper accent (see [Light and dark](#light-and-dark)).
 - **Text in another script looks different.** Only Latin characters are embedded. Other scripts use your system fonts.
 - **A plugin's panel looks wrong.** Check first whether one of your own CSS snippets styles the same element. If not, open an issue on the repository with a screenshot, your Obsidian version, and whether you were in light or dark mode.
