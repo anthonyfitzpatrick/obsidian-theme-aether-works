@@ -1,0 +1,143 @@
+/* Obsidian's own variables, pointed at the palette. Shared by both modes because the
+   palette tokens already differ per mode. */
+.theme-light,
+.theme-dark {
+  --background-primary: var(--aw-parchment);
+  --background-primary-alt: var(--aw-parchment-deep);
+  --background-secondary: var(--aw-leather);
+  --background-secondary-alt: var(--aw-leather-dark);
+  --background-modifier-border: var(--aw-brass-mid);
+  --background-modifier-border-hover: var(--aw-brass);
+  --background-modifier-border-focus: var(--aw-copper);
+  --background-modifier-hover: var(--aw-hover-wash);
+  --background-modifier-active-hover: var(--aw-active-wash);
+  --background-modifier-form-field: var(--aw-form-field);
+  --background-modifier-message: var(--aw-leather-dark);
+
+  --text-normal: var(--aw-ink);
+  --text-muted: var(--aw-ink-muted);
+  --text-faint: var(--aw-ink-faint);
+  --text-on-accent: var(--aw-on-accent);
+  --text-accent: var(--aw-link);
+  --text-accent-hover: var(--aw-link-hover);
+  --text-selection: var(--aw-selection);
+  --text-highlight-bg: var(--aw-highlight-bg);
+
+  --h1-color: var(--aw-h1);
+  --h2-color: var(--aw-link);
+  --h3-color: var(--aw-link);
+  --h4-color: var(--aw-h1);
+  --h5-color: var(--aw-h1);
+  --h6-color: var(--aw-h1);
+  --inline-title-color: var(--aw-h1);
+
+  --color-accent: var(--aw-accent);
+  --interactive-normal: var(--aw-brass);
+  --interactive-hover: var(--aw-brass-hi);
+  --interactive-accent: var(--aw-accent);
+  --interactive-accent-hover: var(--aw-accent-hover);
+
+  --link-color: var(--aw-link);
+  --link-color-hover: var(--aw-link-hover);
+  --link-external-color: var(--aw-link);
+  --link-external-color-hover: var(--aw-link-hover);
+  --link-unresolved-color: var(--aw-ink-muted);
+  --link-decoration: none;
+  --link-external-decoration: none;
+
+  --code-background: var(--aw-code-bg);
+  --code-normal: var(--aw-code-text);
+  --code-comment: var(--aw-code-comment);
+  --code-keyword: var(--aw-code-keyword);
+  --code-string: var(--aw-link);
+  --code-property: var(--aw-link);
+  --code-function: var(--aw-h1);
+  --code-tag: var(--aw-red);
+  --code-value: var(--aw-purple);
+  --code-important: var(--aw-red);
+  --code-operator: var(--aw-ink-muted);
+  --code-punctuation: var(--aw-ink-muted);
+
+  --tag-color: var(--aw-plaque-text);
+  --tag-color-hover: var(--aw-plaque-text);
+  --tag-background: var(--aw-plaque-top);
+  --tag-background-hover: var(--aw-brass-hi);
+  --tag-border-color: var(--aw-brass-shadow);
+  --tag-border-width: 1px;
+  --tag-radius: 3px;
+
+  --checkbox-color: var(--aw-verdigris);
+  --checkbox-color-hover: var(--aw-verdigris-lit);
+  --checkbox-border-color: var(--aw-steel-lo);
+  --checkbox-marker-color: var(--aw-copper-text);
+
+  --color-red: var(--aw-red);
+  --color-green: var(--aw-verdigris);
+  --color-orange: var(--aw-copper);
+  --color-yellow: var(--aw-brass);
+  --color-blue: var(--aw-blue);
+  --color-purple: var(--aw-purple);
+  --color-pink: var(--aw-pink);
+  --color-cyan: var(--aw-cyan);
+
+  --blockquote-border-color: var(--aw-verdigris);
+  --blockquote-border-thickness: 4px;
+  --blockquote-background-color: var(--aw-quote-bg);
+  --blockquote-font-style: italic;
+  --hr-color: var(--aw-brass-mid);
+  --table-header-background: var(--aw-plaque-top);
+  --table-header-color: var(--aw-plaque-text);
+  --table-border-color: var(--aw-brass-mid);
+  --table-row-alt-background: var(--aw-table-alt);
+  --table-row-background-hover: var(--aw-hover-wash);
+  --scrollbar-thumb-bg: var(--aw-active-wash);
+  --scrollbar-active-thumb-bg: var(--aw-brass-mid);
+  --divider-color: var(--aw-steel-mid);
+  --divider-color-hover: var(--aw-copper);
+  --titlebar-background: var(--aw-brass);
+  --titlebar-background-focused: var(--aw-brass-hi);
+  --titlebar-text-color: var(--aw-plaque-text);
+  --titlebar-text-color-focused: var(--aw-plaque-text);
+
+  --ribbon-background: var(--aw-leather-dark);
+  --ribbon-background-collapsed: var(--aw-leather-dark);
+  --tab-container-background: transparent;
+  --tab-text-color: var(--aw-plaque-text);
+  --tab-text-color-focused: var(--aw-plaque-text);
+  --tab-text-color-focused-active: var(--aw-copper-text);
+  --tab-text-color-focused-active-current: var(--aw-copper-text);
+  --status-bar-background: var(--aw-leather-dark);
+  --status-bar-text-color: var(--aw-on-desk);
+  --status-bar-border-color: var(--aw-steel-lo);
+  --nav-item-color: var(--aw-on-leather);
+  --nav-item-color-hover: var(--aw-on-leather);
+  --nav-item-color-active: var(--aw-copper-text);
+  --nav-item-color-selected: var(--aw-on-leather);
+  --nav-item-background-hover: var(--aw-hover-wash);
+  --nav-item-background-active: var(--aw-copper-mid);
+  --nav-collapse-icon-color: var(--aw-on-leather);
+  --icon-color: var(--aw-ink-muted);
+  --icon-color-hover: var(--aw-ink);
+  --icon-color-active: var(--aw-copper);
+  --icon-color-focused: var(--aw-ink);
+
+  --modal-background: var(--aw-parchment);
+  --modal-border-color: var(--aw-brass-mid);
+  --modal-border-width: 3px;
+  --modal-radius: var(--radius-l);
+  --menu-background: var(--aw-parchment);
+  --menu-border-color: var(--aw-brass-mid);
+  --menu-border-width: 2px;
+  --prompt-border-color: var(--aw-brass-mid);
+  --prompt-border-width: 3px;
+
+  --toggle-thumb-color: var(--aw-brass-hi);
+  --toggle-border-width: 1px;
+  --slider-track-background: var(--aw-steel-mid);
+  --slider-thumb-border-color: var(--aw-brass-shadow);
+
+  --callout-border-width: 1px;
+  --callout-radius: var(--radius-m);
+  --callout-title-color: var(--aw-copper-text);
+  --callout-content-background: transparent;
+}

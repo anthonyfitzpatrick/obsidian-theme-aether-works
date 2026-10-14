@@ -1,0 +1,91 @@
+/* ═══ Controls: brass plates, copper for the action that matters, steel and verdigris toggles ═══ */
+
+button:not(.clickable-icon) {
+  font-family: var(--aw-font-plaque);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--aw-plaque-text);
+  border: 1px solid var(--aw-brass-shadow);
+  border-radius: var(--radius-m);
+  background: var(--aw-plaque);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+button:not(.clickable-icon):hover {
+  background: linear-gradient(180deg, var(--aw-brass-hi), var(--aw-plaque-top));
+}
+
+button:not(.clickable-icon):active {
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+button.mod-cta {
+  color: var(--aw-on-accent);
+  background: linear-gradient(180deg, var(--aw-accent), var(--aw-accent-hover));
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+button.mod-cta:hover {
+  background: var(--aw-accent-hover);
+}
+
+button.mod-warning {
+  color: var(--aw-copper-text);
+  background: var(--aw-wax-plate);
+}
+
+/* Text fields: typed on a recessed card */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+textarea {
+  font-family: var(--aw-font-mono);
+  border: 1px solid var(--aw-steel-lo);
+  box-shadow: inset 0 2px 4px var(--aw-inset-shadow);
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: var(--aw-copper);
+  box-shadow: inset 0 2px 4px var(--aw-inset-shadow), 0 0 0 2px var(--aw-active-wash);
+}
+
+/* Property names and values are typed straight onto the page */
+:where(.metadata-container) input[type="text"],
+:where(.metadata-container) .metadata-input-longtext {
+  border-color: transparent;
+  box-shadow: none;
+  background: transparent;
+}
+
+.dropdown {
+  border: 1px solid var(--aw-brass-shadow);
+  background-color: var(--aw-form-field);
+}
+
+/* Toggles: a copper knob in a steel slot that fills with verdigris when on */
+.checkbox-container {
+  border: 1px solid var(--aw-black);
+  background: linear-gradient(var(--aw-steel-mid), var(--aw-steel-lo));
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.checkbox-container::after {
+  background: var(--aw-copper-dome);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.checkbox-container.is-enabled {
+  background: linear-gradient(var(--aw-verdigris-lit), var(--aw-verdigris));
+}
+
+/* Sliders: a brass thumb on a steel track */
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--aw-brass-dome);
+}

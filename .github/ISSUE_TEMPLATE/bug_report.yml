@@ -1,0 +1,80 @@
+name: Bug report
+description: Report a reproducible visual or rendering problem with Aether Works.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Screenshots help enormously for a theme — please crop out private note content, file names, and vault paths before attaching anything.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Briefly describe what looks wrong and where in the interface it appears.
+      placeholder: What is rendering incorrectly, and when did you first notice it?
+    validations:
+      required: true
+  - type: input
+    id: theme-version
+    attributes:
+      label: Theme Version
+      description: Find this in the theme's manifest.json, or on the release you installed.
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: obsidian-version
+    attributes:
+      label: Obsidian Version
+      description: Include the full desktop or mobile version.
+      placeholder: 1.13.7
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: Include the platform and version, and state whether this is desktop or mobile.
+      placeholder: macOS 15.5 desktop
+    validations:
+      required: true
+  - type: dropdown
+    id: appearance
+    attributes:
+      label: Appearance
+      description: Which base colour scheme were you using?
+      options:
+        - Light
+        - Dark
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: The smallest repeatable sequence that shows the problem.
+      placeholder: |
+        1. Enable the theme under Settings, Appearance.
+        2. Open a note with several properties.
+        3. Look at ...
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Attach a screenshot of the problem. Crop out anything private.
+  - type: textarea
+    id: plugins
+    attributes:
+      label: Plugins and Snippets
+      description: List any community plugins, CSS snippets or Style Settings switches affecting the same part of the interface, since those can style it too.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked whether the problem also occurs with the default Obsidian theme.
+        - label: I checked whether a CSS snippet or plugin is styling the same element.

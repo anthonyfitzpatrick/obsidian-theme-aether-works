@@ -1,0 +1,34 @@
+name: Feature request
+description: Propose a focused improvement to Aether Works.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This theme aims at a consistent brass-and-leather Victorian workshop style that stays out of the way of writing, rather than broad configurability. Proposals that keep that character, and its 4.5:1 text contrast, are the easiest to accept.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What part of the interface is unclear, unreadable, or unstyled?
+      placeholder: I find it difficult to...
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: Suggested Solution
+      description: Describe the appearance or behaviour you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: design-precedent
+    attributes:
+      label: Design Precedent
+      description: If this follows period practice (Victorian print, engraving, instrument making), say so, and describe what you are going from.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add screenshots, mockups, or links that clarify the proposal.

@@ -1,0 +1,323 @@
+/* ═══ Content: a printed and engraved page ═══ */
+
+/* Title: a small kicker above, the heading face, a scroll flourish below */
+.inline-title,
+.markdown-rendered h1,
+.HyperMD-header-1 {
+  text-align: center;
+  text-shadow: var(--aw-h1-glow);
+}
+
+.inline-title::before {
+  content: "— ✦ —";
+  display: block;
+  padding-bottom: 0.3em;
+  font-family: var(--aw-font-plaque);
+  font-size: 0.3em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--aw-link);
+  text-shadow: none;
+}
+
+/* The title sits in the live preview editor, where Obsidian asks for padding rather than
+   vertical margins; the gap above the flourish is padding the background skips. */
+.inline-title::after,
+.markdown-rendered h1::after {
+  content: "";
+  display: block;
+  box-sizing: content-box;
+  width: 60%;
+  height: 15px;
+  margin-inline: auto;
+  padding-top: 0.25em;
+  background: var(--aw-flourish);
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+/* Title ornament off: a plain, left-aligned title without kicker or flourish */
+@container style(--aw-title-ornament: off) {
+  .inline-title,
+  .markdown-rendered h1,
+  .HyperMD-header-1 {
+    text-align: start;
+  }
+
+  .inline-title::before,
+  .inline-title::after,
+  .markdown-rendered h1::after {
+    content: none;
+  }
+}
+
+/* Section headings: a Roman numeral, then a rule running to the margin */
+.markdown-rendered {
+  counter-reset: aw-h2;
+}
+
+.markdown-rendered h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  counter-increment: aw-h2;
+}
+
+.markdown-rendered h2::before {
+  content: counter(aw-h2, upper-roman) ".";
+  font-family: var(--aw-font-plaque);
+  font-size: 0.6em;
+  color: var(--aw-copper);
+}
+
+.markdown-rendered h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-left: 0.4em;
+  background: linear-gradient(90deg, var(--aw-sheet-frame-inner), transparent);
+}
+
+@container style(--aw-numerals: off) {
+  .markdown-rendered h2::before {
+    content: none;
+  }
+}
+
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.HyperMD-header-4,
+.HyperMD-header-5,
+.HyperMD-header-6 {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Links: italic, over a double brass rule */
+.markdown-rendered a.internal-link,
+.markdown-rendered a.external-link,
+.cm-hmd-internal-link .cm-underline,
+.cm-link .cm-underline,
+.cm-url .cm-underline {
+  font-style: italic;
+  border-bottom: 3px double var(--aw-brass-mid);
+}
+
+:where(.markdown-rendered) a.internal-link:hover,
+:where(.markdown-rendered) a.external-link:hover {
+  border-bottom-color: var(--aw-copper);
+}
+
+/* Fleurons for unordered lists, in reading view and live preview */
+.list-bullet::after {
+  content: "❧";
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  font-size: 0.95em;
+  line-height: 1;
+  color: var(--aw-copper);
+}
+
+/* Live preview sets the bullet flush against the text; nudge the wider fleuron back */
+:where(.markdown-source-view) .list-bullet::after {
+  transform: translateX(-0.35em);
+}
+
+@container style(--aw-fleurons: off) {
+  .list-bullet::after,
+  :where(.markdown-source-view) .list-bullet::after {
+    content: "";
+    transform: none;
+    width: var(--list-bullet-size);
+    height: var(--list-bullet-size);
+    border-radius: 50%;
+    background: var(--aw-copper);
+  }
+}
+
+/* Task checkboxes: copper valve knobs that turn verdigris when done.
+   Obsidian still draws its own tick on top. */
+.markdown-rendered .task-list-item-checkbox,
+.markdown-source-view .task-list-item-checkbox,
+.metadata-property input[type="checkbox"] {
+  border-radius: 50%;
+  border: 2px solid var(--aw-steel-lo);
+  background-image: var(--aw-copper-dome);
+  box-shadow: 0 0 0 1px var(--aw-steel), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.markdown-rendered .task-list-item-checkbox:checked,
+.markdown-source-view .task-list-item-checkbox:checked,
+:where(.metadata-property) input[type="checkbox"]:checked {
+  background-image: var(--aw-verdigris-dome);
+}
+
+/* Tags: brass tokens with a punched hole */
+.tag,
+.cm-hashtag {
+  position: relative;
+  font-family: var(--aw-font-mono);
+  font-size: 0.78em;
+  letter-spacing: 0.04em;
+  background: var(--aw-plaque);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tag {
+  padding-left: 16px;
+}
+
+.cm-hashtag-begin {
+  padding-left: 16px;
+}
+
+.tag::before,
+.cm-hashtag-begin::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--aw-brass-shadow);
+  transform: translateY(-50%);
+}
+
+/* Callouts: riveted plates. Copper by default, verdigris for good news, blackened iron
+   for warnings. The text inside is re-inked to read on the metal. */
+.callout {
+  --text-normal: var(--aw-copper-text);
+  --text-muted: var(--aw-copper-text);
+  --link-color: var(--aw-copper-text);
+  --link-color-hover: var(--aw-brass-hi);
+  --link-external-color: var(--aw-copper-text);
+  --code-background: rgba(0, 0, 0, 0.25);
+  --code-normal: var(--aw-copper-text);
+  --icon-color: var(--aw-copper-text);
+  --aw-callout-plate: var(--aw-copper-plate);
+  --aw-strip: 12px;
+  --aw-strip-metal: linear-gradient(90deg, var(--aw-brass-lo), var(--aw-brass-hi) 40%, var(--aw-brass-mid));
+  --callout-padding: 12px calc(var(--aw-strip) + 14px);
+  color: var(--aw-copper-text);
+  border: 1px solid var(--aw-black);
+  /* The riveted brass strips are background layers: Obsidian clips a callout's overflow,
+     so pseudo-elements outside the padding box would never show. */
+  background:
+    var(--aw-rivet-row) left 8px / var(--aw-strip) 26px repeat-y,
+    var(--aw-rivet-row) right 8px / var(--aw-strip) 26px repeat-y,
+    var(--aw-strip-metal) left top / var(--aw-strip) 100% no-repeat,
+    var(--aw-strip-metal) right top / var(--aw-strip) 100% no-repeat,
+    var(--aw-callout-plate);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.callout-title {
+  color: var(--aw-copper-text);
+  font-family: var(--aw-font-plaque);
+  font-size: 0.78em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+/* Obsidian colours the icon from --callout-color, which each callout type sets; setting it
+   on the icon itself keeps every type's icon in the plate's lettering colour. */
+.callout-icon {
+  --callout-color: var(--aw-copper-text);
+}
+
+.callout-content {
+  font-style: italic;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.callout:is([data-callout="warning"], [data-callout="caution"], [data-callout="attention"], [data-callout="danger"], [data-callout="error"], [data-callout="bug"], [data-callout="failure"], [data-callout="fail"], [data-callout="missing"]) {
+  --aw-callout-plate: var(--aw-iron-plate);
+}
+
+.callout:is([data-callout="tip"], [data-callout="hint"], [data-callout="important"], [data-callout="success"], [data-callout="check"], [data-callout="done"]) {
+  --aw-callout-plate: var(--aw-verdigris);
+}
+
+/* Blockquote: a margin note */
+.markdown-rendered blockquote {
+  padding: 0.5em 1.1em;
+}
+
+/* Code blocks: telegraph tape running between sprocketed steel guides. The guides are
+   background layers, not pseudo-elements, so they never widen the scrolling area. */
+.markdown-rendered pre {
+  --aw-sprockets: radial-gradient(circle at 50% 7px, var(--aw-black) 0 2.5px, transparent 3px);
+  --aw-guide: linear-gradient(90deg, var(--aw-steel-lo), var(--aw-steel) 45%, var(--aw-steel-mid));
+  padding-inline: 30px;
+  border: 1px solid var(--aw-steel-lo);
+  border-radius: 0;
+  background:
+    var(--aw-sprockets) left top / 16px 14px repeat-y,
+    var(--aw-sprockets) right top / 16px 14px repeat-y,
+    var(--aw-guide) left top / 16px 100% no-repeat,
+    var(--aw-guide) right top / 16px 100% no-repeat,
+    var(--aw-code-bg);
+  box-shadow: inset 0 0 12px var(--aw-inset-shadow);
+}
+
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code {
+  border: 1px solid var(--aw-brass);
+  border-radius: 2px;
+}
+
+/* Highlights: brass ink */
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-highlight {
+  padding: 0 3px;
+  color: var(--aw-ink);
+}
+
+/* Horizontal rule: the scroll flourish */
+.markdown-rendered hr {
+  width: 70%;
+  height: 15px;
+  margin: 1.6em auto;
+  border: 0;
+  background: var(--aw-flourish);
+}
+
+/* Tables: an engraved ledger with a brass heading strip */
+.markdown-rendered table {
+  border: 1px solid var(--aw-brass-mid);
+}
+
+.markdown-rendered th {
+  font-family: var(--aw-font-plaque);
+  font-size: 0.72em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--aw-plaque);
+}
+
+/* Properties: the particulars, typed */
+.metadata-container {
+  --metadata-label-font: var(--aw-font-mono);
+  --metadata-input-font: var(--aw-font-mono);
+  --pill-background: var(--aw-plaque-mid);
+  --pill-background-hover: var(--aw-plaque-top);
+  --pill-color: var(--aw-plaque-text);
+  --pill-color-hover: var(--aw-plaque-text);
+  --pill-color-remove: var(--aw-plaque-text);
+  --pill-color-remove-hover: var(--aw-plaque-text);
+  --pill-border-color: var(--aw-brass-shadow);
+}
+
+.metadata-properties-heading,
+.metadata-property-key {
+  color: var(--aw-link);
+}
+
+.metadata-properties-heading {
+  font-family: var(--aw-font-mono);
+}

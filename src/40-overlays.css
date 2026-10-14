@@ -1,0 +1,37 @@
+/* ═══ Overlays: brass-framed parchment for modals, menus and the command palette ═══ */
+
+.modal,
+.menu,
+.prompt,
+.suggestion-container {
+  /* Obsidian paints the chosen row from this variable; a matte brass plate here */
+  --background-modifier-hover: var(--aw-plaque-mid);
+  box-shadow: inset 0 0 0 1px var(--aw-brass-hi), 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.modal-title,
+.setting-item-heading .setting-item-name {
+  font-family: var(--aw-font-heading);
+  font-weight: 900;
+  color: var(--aw-h1);
+}
+
+/* The chosen settings section is a copper plate */
+.vertical-tab-nav-item.is-active {
+  color: var(--aw-copper-text);
+  background: var(--aw-copper-plate);
+}
+
+/* Notices and tooltips: brass lettering on dark leather */
+.notice,
+.tooltip {
+  color: var(--aw-on-desk);
+  border: 1px solid var(--aw-brass-mid);
+  background-color: var(--aw-leather-dark);
+}
+
+/* Hover previews: a small framed sheet */
+.popover.hover-popover {
+  border: 2px solid var(--aw-brass-mid);
+  box-shadow: inset 0 0 0 1px var(--aw-brass-hi), 0 6px 18px rgba(0, 0, 0, 0.5);
+}

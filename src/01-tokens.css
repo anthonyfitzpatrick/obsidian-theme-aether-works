@@ -1,0 +1,81 @@
+/* Shared, mode-independent tokens. Colours live in the palettes (02, 03). */
+body {
+  /* Option switches, all "on" by default. A CSS snippet, a note's cssclasses or Style
+     Settings sets one to "off"; see scripts/options.ts, which generates all three. */
+  --aw-numerals: on;
+  --aw-fleurons: on;
+  --aw-title-ornament: on;
+  --aw-stitching: on;
+
+  /* The embedded faces are declared by scripts/build.ts under "Aether …" family names, so
+     they never collide with copies the user has installed. Each stack ends in a system
+     fallback with the same character. */
+  --aw-face-display: "Aether Rye", "Aether Playfair", Georgia, serif;
+  --aw-face-heading: "Aether Playfair", Georgia, "Times New Roman", serif;
+  --aw-face-body: "Aether Fell", Georgia, serif;
+  --aw-face-plaque: "Aether Cinzel", "Trajan Pro", Georgia, serif;
+  --aw-face-mono: "Aether Typewriter", "Courier Prime", "Courier New", monospace;
+
+  /* What the components read. "Use Obsidian's fonts" points these back at Obsidian. */
+  --aw-font-display: var(--aw-face-display);
+  --aw-font-heading: var(--aw-face-heading);
+  --aw-font-plaque: var(--aw-face-plaque);
+  /* Monospace goes through Obsidian's own slot, so a font the user picks still wins */
+  --aw-font-mono: var(--font-monospace);
+
+  /* Obsidian's theme-level font slots. The user's own font choices still win. */
+  --font-interface-theme: var(--aw-face-body);
+  --font-text-theme: var(--aw-face-body);
+  --font-monospace-theme: var(--aw-face-mono);
+  --font-text-size: 17px;
+
+  --radius-s: 3px;
+  --radius-m: 4px;
+  --radius-l: 6px;
+  --ribbon-width: 52px;
+  --divider-width: 4px;
+
+  --h1-font: var(--aw-font-heading);
+  --h2-font: var(--aw-font-heading);
+  --h3-font: var(--aw-font-heading);
+  --h4-font: var(--aw-font-plaque);
+  --h5-font: var(--aw-font-plaque);
+  --h6-font: var(--aw-font-plaque);
+  --inline-title-font: var(--aw-font-heading);
+  --h1-weight: 900;
+  --h2-weight: 700;
+  --h3-weight: 700;
+  --h4-weight: 700;
+  --inline-title-weight: 900;
+  --h1-size: 2.1em;
+  --h2-size: 1.5em;
+  --h3-size: 1.25em;
+  --h4-size: 0.85em;
+  --h5-size: 0.8em;
+  --h6-size: 0.75em;
+  --line-height-normal: 1.55;
+
+  /* Rivets and screw heads, shared by plates, rails and callouts */
+  --aw-screw: radial-gradient(circle at 35% 30%, var(--aw-steel-hi), var(--aw-steel) 55%, var(--aw-steel-lo) 90%);
+  --aw-rivet-row: radial-gradient(circle at 50% 6px, var(--aw-steel-hi) 0 1.2px, var(--aw-steel) 2px, var(--aw-steel-lo) 3.2px, var(--aw-black) 4px, transparent 4.6px);
+  --aw-plaque: linear-gradient(180deg, var(--aw-plaque-top), var(--aw-plaque-mid) 55%, var(--aw-plaque-bottom));
+  --aw-copper-plate: radial-gradient(ellipse at 30% 0%, var(--aw-sheen-copper), transparent 60%), linear-gradient(180deg, var(--aw-copper-top), var(--aw-copper-mid) 55%, var(--aw-copper-bottom));
+  --aw-wax-plate: linear-gradient(180deg, var(--aw-wax-top), var(--aw-wax-bottom));
+  --aw-iron-plate: radial-gradient(ellipse at 30% 0%, var(--aw-sheen-iron), transparent 60%), linear-gradient(180deg, var(--aw-iron-top), var(--aw-iron-bottom));
+  --aw-flourish:
+    radial-gradient(circle at 50% 50%, var(--aw-copper) 0 3px, transparent 3.5px) center / 100% 100% no-repeat,
+    linear-gradient(var(--aw-sheet-frame), var(--aw-sheet-frame)) left 6px / 42% 1px no-repeat,
+    linear-gradient(var(--aw-sheet-frame), var(--aw-sheet-frame)) right 6px / 42% 1px no-repeat,
+    linear-gradient(var(--aw-sheet-frame-inner), var(--aw-sheet-frame-inner)) left 9px / 42% 1px no-repeat,
+    linear-gradient(var(--aw-sheet-frame-inner), var(--aw-sheet-frame-inner)) right 9px / 42% 1px no-repeat;
+  --aw-leather-grain:
+    radial-gradient(ellipse at 30% 10%, var(--aw-sheen-leather), transparent 55%),
+    repeating-radial-gradient(circle at 20% 30%, var(--aw-grain) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(45deg, var(--aw-grain) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(-45deg, var(--aw-grain) 0 2px, transparent 2px 7px);
+  --aw-damask:
+    radial-gradient(circle at 20px 20px, var(--aw-damask-ink) 0 2px, transparent 3px) 0 0 / 40px 40px,
+    radial-gradient(circle at 0 0, var(--aw-damask-ink) 0 1.5px, transparent 2.5px) 0 0 / 40px 40px,
+    repeating-linear-gradient(45deg, var(--aw-damask-ink) 0 1px, transparent 1px 20px),
+    repeating-linear-gradient(-45deg, var(--aw-damask-ink) 0 1px, transparent 1px 20px);
+}

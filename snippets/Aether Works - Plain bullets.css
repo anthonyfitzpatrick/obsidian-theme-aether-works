@@ -1,0 +1,8 @@
+/* Aether Works: Plain bullets.
+   Use ordinary bullets instead of fleurons.
+   Turn it on or off under Settings → Appearance → CSS snippets. No plugin needed.
+   With this snippet on, a note keeps the ornament by listing "aw-fleurons" in its cssclasses property.
+   Generated from scripts/options.ts; edit that, not this file. */
+body {
+  --aw-fleurons: off;
+}

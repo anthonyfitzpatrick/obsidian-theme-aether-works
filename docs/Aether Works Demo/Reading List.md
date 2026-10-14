@@ -1,0 +1,3 @@
+- [ ] *Passages from the Life of a Philosopher*
+- [ ] *On the Economy of Machinery and Manufactures*
+- [x] *A Treatise on the Steam Engine*

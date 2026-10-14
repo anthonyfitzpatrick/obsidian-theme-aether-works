@@ -1,0 +1,8 @@
+/* Aether Works: Plain leather.
+   Flat colours instead of the leather grain and damask patterns.
+   Turn it on or off under Settings → Appearance → CSS snippets. No plugin needed.
+   Generated from scripts/options.ts; edit that, not this file. */
+body {
+  --aw-leather-grain: none;
+  --aw-damask: none;
+}

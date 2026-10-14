@@ -1,0 +1,35 @@
+{
+  "$comment": "Enforces Obsidian's theme guidelines (low specificity, no !important, no remote assets) and catches CSS slop: duplicates, empty blocks, unknown properties and stray hex colours. Fonts are embedded by scripts/build.ts from fonts/, so src/ never declares @font-face itself.",
+  "rules": {
+    "declaration-no-important": true,
+    "selector-max-specificity": "0,3,0",
+    "selector-max-id": 0,
+    "function-url-scheme-allowed-list": ["data"],
+    "at-rule-disallowed-list": ["import", "font-face"],
+    "color-named": "never",
+    "color-no-invalid-hex": true,
+    "color-no-hex": true,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-duplicate-custom-properties": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "no-duplicate-selectors": true,
+    "block-no-empty": true,
+    "comment-no-empty": true,
+    "no-empty-source": true,
+    "no-invalid-double-slash-comments": true,
+    "property-no-unknown": true,
+    "unit-no-unknown": true,
+    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-element-no-unknown": true,
+    "selector-type-no-unknown": true,
+    "media-feature-name-no-unknown": true,
+    "string-no-newline": true
+  },
+  "overrides": [
+    {
+      "$comment": "Colour values live in the palettes; print uses plain black and white.",
+      "files": ["src/02-palette-dark.css", "src/03-palette-light.css", "src/90-accessibility.css"],
+      "rules": { "color-no-hex": null }
+    }
+  ]
+}

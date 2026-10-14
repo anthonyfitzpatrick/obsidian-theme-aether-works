@@ -1,0 +1,142 @@
+/* ═══ Responsive: the fittings slim down as the window narrows, and phones and tablets
+   get their own leather drawers and brass toolbars ═══ */
+
+/* Each page is a size container, so the type and ornaments respond to the width of its
+   own pane: a split pane narrows them just as a narrow window does. */
+:where(.mod-root) .view-content {
+  container: aw-page / inline-size;
+}
+
+/* A narrower window: thinner stitching, and the sidebars give way to the page */
+@media (max-width: 1100px) {
+  :where(.workspace-split).mod-sidedock:not(.is-collapsed) {
+    max-width: 28vw;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  :where(.workspace-split).mod-sidedock:not(.is-collapsed) {
+    max-width: 40vw;
+  }
+}
+
+/* A narrow page: smaller title, no trailing rules, slimmer plates and tape */
+@container aw-page (max-width: 640px) {
+  .inline-title,
+  .markdown-rendered h1 {
+    font-size: 1.6em;
+  }
+
+  .inline-title::after,
+  .markdown-rendered h1::after {
+    width: 85%;
+  }
+
+  .markdown-rendered h2::after {
+    content: none;
+  }
+
+  .callout {
+    --aw-strip: 8px;
+  }
+
+  .markdown-rendered pre {
+    padding-inline: 22px;
+    background-size: 10px 14px, 10px 14px, 10px 100%, 10px 100%, auto;
+  }
+}
+
+@container aw-page (max-width: 420px) {
+  .markdown-rendered table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* ── Phones and tablets ── */
+
+/* The domed ribbon buttons and the window bezel are desktop fittings */
+:where(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
+:where(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:hover {
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: none;
+  box-shadow: none;
+}
+
+:where(.is-mobile) .app-container {
+  box-shadow: none;
+}
+
+/* Sidebar drawers: saddle leather with a stitched edge */
+.workspace-drawer {
+  /* Obsidian paints the drawer's inner panels from this variable; clear it so the leather shows */
+  --mobile-sidebar-background: transparent;
+  --background-secondary: transparent;
+  --background-primary: transparent;
+  --text-normal: var(--aw-on-leather);
+  --text-muted: var(--aw-on-leather-muted);
+  --text-faint: var(--aw-on-leather-muted);
+  --icon-color: var(--aw-on-leather);
+  --icon-color-hover: var(--aw-on-leather);
+  background: var(--aw-leather-grain), var(--aw-leather);
+}
+
+.workspace-drawer::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    var(--aw-stitch-h) 0 0 / 16px 9px repeat-x,
+    var(--aw-stitch-h) 0 100% / 16px 9px repeat-x,
+    var(--aw-stitch-v) 0 0 / 9px 16px repeat-y,
+    var(--aw-stitch-v) 100% 0 / 9px 16px repeat-y;
+}
+
+@container style(--aw-stitching: off) {
+  .workspace-drawer::after {
+    content: none;
+  }
+}
+
+.workspace-drawer-header,
+.workspace-drawer-tab-options {
+  --icon-color: var(--aw-plaque-text);
+  --icon-color-hover: var(--aw-plaque-text);
+  color: var(--aw-plaque-text);
+  background: var(--aw-plaque);
+}
+
+.workspace-drawer-ribbon {
+  background: var(--aw-damask), var(--aw-leather-dark);
+}
+
+/* The bottom navigation bar and the toolbar above the keyboard: a leather strap under a
+   steel rail */
+.mobile-navbar,
+.mobile-toolbar {
+  --icon-color: var(--aw-on-desk);
+  --icon-color-hover: var(--aw-on-desk);
+  --icon-color-active: var(--aw-copper-text);
+  color: var(--aw-on-desk);
+  border-top: 3px solid var(--aw-steel-lo);
+  background: var(--aw-damask), var(--aw-leather-dark);
+}
+
+:where(.is-phone) .inline-title::after,
+:where(.is-phone) .markdown-rendered h1::after {
+  width: 90%;
+}
+
+/* Bigger valve knobs for a fingertip */
+:where(.is-mobile) .markdown-rendered .task-list-item-checkbox,
+:where(.is-mobile) .markdown-source-view .task-list-item-checkbox {
+  width: 20px;
+  height: 20px;
+}

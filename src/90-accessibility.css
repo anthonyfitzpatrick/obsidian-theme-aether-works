@@ -1,0 +1,45 @@
+/* ═══ Accessibility and print ═══ */
+
+/* Forced colours (Windows high contrast): drop the textures and metal so the system
+   palette reads cleanly. */
+@media (forced-colors: active) {
+  .workspace-split.mod-sidedock,
+  .workspace-ribbon.mod-left,
+  .workspace-split.mod-root,
+  .status-bar {
+    background: none;
+  }
+
+  :where(.mod-root) .view-content {
+    background: none;
+    box-shadow: none;
+  }
+}
+
+/* Printing and PDF export: black ink on white paper, no metal */
+@media print {
+  .theme-light,
+  .theme-dark {
+    --aw-ink: #000000;
+    --aw-h1: #000000;
+    --aw-link: #000000;
+    --aw-copper: #555555;
+    --aw-copper-text: #000000;
+    --aw-copper-plate: none;
+    --aw-wax-plate: none;
+    --aw-iron-plate: none;
+    --aw-h1-glow: none;
+  }
+
+  .callout {
+    border-color: #000000;
+    background: none;
+    box-shadow: none;
+  }
+
+  .markdown-rendered pre {
+    padding-inline: 1em;
+    background: none;
+    box-shadow: none;
+  }
+}

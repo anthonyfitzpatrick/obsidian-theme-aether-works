@@ -1,0 +1,107 @@
+/* Dark: oxblood leather and aged brass, the lamps lit.
+   Colour values only. Every --aw-* hex here is checked by tests/contrast.test.ts. */
+.theme-dark {
+  /* Grounds */
+  --aw-parchment: #1c1712;
+  --aw-parchment-deep: #14100c;
+  --aw-parchment-glow: #26211b;
+  --aw-leather: #3a2218;
+  --aw-leather-dark: #1e120c;
+  --aw-form-field: #0e0b09;
+  --aw-code-bg: #0a0806;
+  --aw-quote-bg: #241e17;
+  --aw-table-alt: #221b14;
+  --aw-highlight-bg: #5a4220;
+
+  /* Inks */
+  --aw-ink: #e8d9b8;
+  --aw-ink-muted: #b8a07a;
+  --aw-ink-faint: #8a7656;
+  --aw-link: #e0a458;
+  --aw-link-hover: #f2c47e;
+  --aw-h1: #f6de9a;
+  --aw-on-leather: #dcc9a4;
+  --aw-on-leather-muted: #b8a07a;
+  --aw-on-desk: #ebcb82;
+
+  /* Metals */
+  --aw-brass-hi: #ebcb82;
+  --aw-brass: #a8803e;
+  --aw-brass-mid: #7a5a28;
+  --aw-brass-lo: #5a4220;
+  --aw-brass-shadow: #1a120a;
+  --aw-copper: #c96a2e;
+  --aw-steel-hi: #c8cbce;
+  --aw-steel: #7e8286;
+  --aw-steel-mid: #55585c;
+  --aw-steel-lo: #202224;
+  --aw-black: #000000;
+  --aw-sheet-frame: #7a5a28;
+  --aw-sheet-frame-inner: #a8803e;
+
+  /* Plates: text set on metal */
+  --aw-plaque-text: #f6de9a;
+  --aw-plaque-top: #765a26;
+  --aw-plaque-mid: #6e5424;
+  --aw-plaque-bottom: #5a4420;
+  --aw-copper-text: #fff0dc;
+  --aw-copper-top: #8a4a2a;
+  --aw-copper-mid: #6e3a1e;
+  --aw-copper-bottom: #4e2812;
+  --aw-wax-top: #9c3a26;
+  --aw-wax-bottom: #5a1810;
+  --aw-iron-top: #4a4d50;
+  --aw-iron-bottom: #2a2c2e;
+  --aw-accent: #a4501c;
+  --aw-accent-hover: #8a3f14;
+  --aw-on-accent: #fff4da;
+
+  /* Signal colours */
+  --aw-verdigris: #3a7262;
+  --aw-verdigris-lit: #5fa893;
+  --aw-red: #f08a62;
+  --aw-blue: #7a98b8;
+  --aw-purple: #b08ac0;
+  --aw-pink: #d08a9e;
+  --aw-cyan: #8fc2b0;
+
+  /* Code */
+  --aw-code-text: #e8d9b8;
+  --aw-code-comment: #8a7656;
+  --aw-code-keyword: #5fa893;
+
+  /* Translucent washes */
+  --aw-sheen-copper: rgba(255, 200, 160, 0.14);
+  --aw-sheen-iron: rgba(255, 255, 255, 0.08);
+  --aw-sheen-leather: rgba(255, 220, 170, 0.16);
+  --aw-grain: rgba(0, 0, 0, 0.18);
+  --aw-damask-ink: rgba(194, 154, 78, 0.13);
+  --aw-hover-wash: rgba(168, 128, 62, 0.22);
+  --aw-active-wash: rgba(168, 128, 62, 0.35);
+  --aw-selection: rgba(168, 128, 62, 0.4);
+  --aw-ruled-line: rgba(230, 200, 140, 0.045);
+  --aw-sheet-vignette: rgba(0, 0, 0, 0.8);
+  --aw-inset-shadow: rgba(0, 0, 0, 0.9);
+  --aw-h1-glow: 0 0 18px rgba(240, 201, 138, 0.4), 0 2px 0 #5a4220;
+
+  /* Metal finishes */
+  --aw-brass-gradient-h: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 3px), linear-gradient(90deg, #4e3614, #e6c77e 18%, #6e4e1e 38%, #d9b86a 58%, #4e3614 78%, #b8933f 100%);
+  --aw-copper-dome: radial-gradient(circle at 36% 30%, #b87a54, #7e4426 55%, #3e1e0c 100%);
+  --aw-copper-dome-hover: radial-gradient(circle at 36% 30%, #d09068, #96522e 55%, #4e2812 100%);
+  --aw-brass-dome: radial-gradient(circle at 36% 30%, #f6de9a, #c9a75e 22%, #a8803e 50%, #6e4e1e 82%, #1a120a 100%);
+  --aw-brass-dome-hover: radial-gradient(circle at 36% 30%, #fff3c8, #ebcb82 26%, #b8933f 55%, #7a5a28 85%, #1a120a 100%);
+  --aw-verdigris-dome: radial-gradient(circle at 40% 35%, #8fc2b0, #3e7a69 70%);
+
+  /* Running stitch tiles: thread through punched holes */
+  --aw-stitch-h: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9'%3E%3Ccircle cx='2.5' cy='4.5' r='1.9' fill='rgba(255,220,160,0.22)'/%3E%3Ccircle cx='2.5' cy='4.2' r='1.6' fill='%230E0704'/%3E%3Ccircle cx='13.5' cy='4.5' r='1.9' fill='rgba(255,220,160,0.22)'/%3E%3Ccircle cx='13.5' cy='4.2' r='1.6' fill='%230E0704'/%3E%3Cpath d='M2.6 4.6 Q8 3.4 13.4 4.6' fill='none' stroke='%23C9A95E' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --aw-stitch-v: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='16'%3E%3Ccircle cx='4.5' cy='2.5' r='1.9' fill='rgba(255,220,160,0.22)'/%3E%3Ccircle cx='4.2' cy='2.5' r='1.6' fill='%230E0704'/%3E%3Ccircle cx='4.5' cy='13.5' r='1.9' fill='rgba(255,220,160,0.22)'/%3E%3Ccircle cx='4.2' cy='13.5' r='1.6' fill='%230E0704'/%3E%3Cpath d='M4.6 2.6 Q3.4 8 4.6 13.4' fill='none' stroke='%23C9A95E' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+
+  /* Graph view */
+  --graph-node: #b8933f;
+  --graph-line: #6e5424;
+  --graph-text: #e8d9b8;
+  --graph-node-tag: #5fa893;
+  --graph-node-attachment: #c96a2e;
+  --graph-node-unresolved: #8a7656;
+  --graph-node-focused: #f6de9a;
+}

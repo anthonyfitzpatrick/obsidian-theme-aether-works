@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+
+# Demo vault: only the notes and the theme choice are tracked
+docs/Aether Works Demo/.obsidian/*
+!docs/Aether Works Demo/.obsidian/appearance.json

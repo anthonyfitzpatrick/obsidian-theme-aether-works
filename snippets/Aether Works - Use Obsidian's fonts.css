@@ -1,0 +1,13 @@
+/* Aether Works: Use Obsidian's fonts.
+   Replace the embedded Victorian typefaces with the fonts chosen under Settings, Appearance.
+   Turn it on or off under Settings → Appearance → CSS snippets. No plugin needed.
+   Generated from scripts/options.ts; edit that, not this file. */
+body {
+  --aw-font-display: var(--font-interface);
+  --aw-font-heading: var(--font-text);
+  --aw-font-plaque: var(--font-interface);
+  --font-interface-theme: var(--font-default);
+  --font-text-theme: var(--font-default);
+  --font-monospace-theme: var(--font-monospace-default);
+  --font-text-size: 16px;
+}

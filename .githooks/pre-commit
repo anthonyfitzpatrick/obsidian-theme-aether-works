@@ -1,0 +1,3 @@
+#!/bin/sh
+# Enable with: git config core.hooksPath .githooks
+npm run --silent check
