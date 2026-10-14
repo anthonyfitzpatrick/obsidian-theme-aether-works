@@ -34,20 +34,22 @@ The [User Guide](USERGUIDE.md) walks through every part, with pictures.
 
 ## Typefaces
 
-The theme embeds four freely licensed typefaces (Latin characters only), so it looks the same offline:
+Out of the box, Aether Works uses period-style serifs most systems already have, and embeds one typeface of its own:
 
-- **Playfair Display**, an 18th-century-style high-contrast serif, for titles, headings and tabs.
-- **IM Fell English**, a revival of 17th-century English printing type, for body text and the interface.
-- **Cinzel**, after Roman inscriptions, for engraved plates, buttons, table headings and the window title bar.
-- **Cutive Mono**, a typewriter face drawn from the Smith Premier of 1889, for code, tags and properties.
+- **Headings:** Bodoni or Didot, the high-contrast serifs of 19th-century print (Palatino or Georgia where those aren't installed).
+- **Text and interface:** Baskerville (Palatino or Georgia elsewhere).
+- **Engraved plates, buttons and table headings:** Copperplate's engraved capitals.
+- **Code, tags and properties:** **Cutive Mono**, embedded, a typewriter face drawn from the Smith Premier of 1889.
 
-All four are under the SIL Open Font License. Its full text and the fonts' copyright notices are inside `theme.css` and in [fonts/](fonts/README.md). Any font you choose under *Settings → Appearance* takes priority, and the *Use Obsidian's fonts* option turns all four off.
+For the full period look on every system, switch on the optional **Period typefaces** snippet ([Options](#options-without-plugins)). It embeds the three typefaces the theme was designed with: **Playfair Display** for headings, **IM Fell English**, a revival of 17th-century English printing type, for text, and **Cinzel**, after Roman inscriptions, for plates. They're kept out of `theme.css` because together they're about 250 KB, and Obsidian's directory asks for themes to stay small.
+
+All the embedded typefaces are under the SIL Open Font License. Its full text and the fonts' copyright notices are inside each file that embeds them, and in [fonts/](fonts/README.md). Any font you choose under *Settings → Appearance* takes priority, and the *Use Obsidian's fonts* option hands every font back to Obsidian.
 
 ## Phones, tablets and small windows
 
-![The theme on a phone in dark mode: a narrow screen with the note title wrapped onto two lines, the properties, and the first paragraph above a floating navigation bar.](docs/images/06-phone-dark.png)
+![The theme on a phone in dark mode: a narrow screen with the gold note title on one line under a brass kicker and flourish, the properties, and the first paragraph above a floating navigation bar.](docs/images/06-phone-dark.png)
 
-*A phone in dark mode. The page fills the screen and the title wraps neatly. The brass plaque header at the top carries the sidebar and edit buttons. The checkboxes are slightly larger, so they're easier to tap.*
+*A phone in dark mode. The page fills the screen, and the title keeps its kicker and flourish. The brass plaque header at the top carries the sidebar and edit buttons. The checkboxes are slightly larger, so they're easier to tap.*
 
 ![The file drawer on a phone in light mode: tan stitched leather with the folder tree, the open file as a copper plate, and a brass vault-name plate at the bottom.](docs/images/07-phone-drawer-light.png)
 
@@ -57,18 +59,19 @@ As a window or a split pane narrows, the title shrinks, the heading rules drop a
 
 ## Options, without plugins
 
-Six options switch parts of the theme off. Each is a small CSS snippet that Obsidian switches on and off by itself, with no plugin needed. In-note options can also be set note by note:
+Six options switch parts of the theme off, and one adds the period typefaces. Each is a small CSS snippet that Obsidian switches on and off by itself, with no plugin needed. In-note options can also be set note by note:
 
 | Option | What it does | Per note (off / keep on) |
 | --- | --- | --- |
-| Use Obsidian's fonts | Your Obsidian fonts replace the four embedded typefaces | — |
+| Period typefaces | Embeds Playfair Display, IM Fell English and Cinzel (about 250 KB) | — |
+| Use Obsidian's fonts | Your Obsidian fonts replace the theme's | — |
 | Plain leather | Flat colour instead of leather grain and damask | — |
 | No stitching | Removes the running stitch | — |
 | No Roman numerals | Unnumbered headings and outline | `aw-no-numerals` / `aw-numerals` |
 | Plain bullets | Ordinary bullets instead of fleurons | `aw-plain-bullets` / `aw-fleurons` |
 | Plain title | A left-aligned title, without kicker or flourish | `aw-plain-title` / `aw-title-ornament` |
 
-![Obsidian's CSS snippets settings page listing the six Aether Works snippets, each with an on/off toggle; "No Roman numerals" and "Plain title" are switched on, shown as green toggles.](docs/images/08-snippets-light.png)
+![Obsidian's CSS snippets settings page listing the seven Aether Works snippets, including "Period typefaces", each with an on/off toggle; "No Roman numerals" and "Plain title" are switched on, shown as green toggles.](docs/images/08-snippets-light.png)
 
 *The snippets in Obsidian's own settings (Settings → Appearance → CSS snippets). Each option has its own "Aether Works - …" switch. Here "No Roman numerals" and "Plain title" are on (verdigris) and the rest are off (copper). The [User Guide](USERGUIDE.md#options) explains how to install them.*
 
@@ -76,7 +79,7 @@ Six options switch parts of the theme off. Each is a small CSS snippet that Obsi
 
 *The note with "Plain title", "No Roman numerals" and "Plain bullets" switched on. The title is left-aligned without its kicker and flourish, the section heading has no numeral, and the list has an ordinary bullet. Compare with the light-mode picture above.*
 
-If you use the Style Settings plugin, the same six switches also appear there. The theme never needs it.
+If you use the Style Settings plugin, the six options also appear there as switches. The theme never needs it.
 
 ## Accessibility
 

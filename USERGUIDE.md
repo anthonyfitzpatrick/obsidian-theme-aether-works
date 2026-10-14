@@ -60,7 +60,7 @@ Between the panes, steel rails divide the workspace. Drag them to resize as usua
 
 *A note in reading view, light mode. From the top:*
 
-- *The **title** is centred in Playfair Display, with a small "— ✦ —" kicker above it and a double brass rule with a copper dot beneath it.*
+- *The **title** is centred in the heading face (Bodoni here, on macOS), with a small "— ✦ —" kicker above it and a double brass rule with a copper dot beneath it.*
 - *The **properties** are typed in the typewriter face, and the tags in them are brass tokens.*
 - *In the **paragraph**, "cast-iron" is inline code in a thin brass outline, and "Brass Alloy Notes" is a link: italic, over a double brass underline.*
 - *The **section heading** "I. Of the Mechanism" has a copper Roman numeral before it and a fine brass rule after it.*
@@ -123,26 +123,29 @@ Notices and tooltips are brass lettering on dark leather, and hover previews of 
 
 ## Typefaces
 
-Aether Works carries its own typefaces inside `theme.css`, so it looks the same with or without an internet connection:
+Aether Works never loads fonts from the internet. Out of the box it uses period-style serifs that most systems already have, plus one embedded typewriter face:
 
-| Typeface | Era and style | Used for |
+| Used for | Default | With the *Period typefaces* snippet |
 | --- | --- | --- |
-| **IM Fell English** | A revival of 17th-century English printing type | Body text and the interface |
-| **Playfair Display** | A high-contrast serif in the late-18th-century style | Titles, headings, editor tabs |
-| **Cinzel** | Capitals after Roman inscriptions | Engraved plates, buttons, callout titles, table headings, the window title bar on Windows and Linux |
-| **Cutive Mono** | A typewriter face drawn from the Smith Premier typewriter of 1889 | Code, tags, properties, the status bar |
+| Titles, headings, editor tabs | Bodoni 72 or Didot (macOS and iOS); Bodoni MT, Palatino or Georgia elsewhere | **Playfair Display**, a high-contrast serif in the late-18th-century style |
+| Body text and the interface | Baskerville (macOS and iOS); Palatino Linotype, Book Antiqua or Georgia elsewhere | **IM Fell English**, a revival of 17th-century English printing type |
+| Engraved plates, buttons, callout titles, table headings, the window title bar | Copperplate (macOS and iOS); Copperplate Gothic (Windows, with Office) or Baskerville | **Cinzel**, capitals after Roman inscriptions |
+| Code, tags, properties, the status bar | **Cutive Mono**, embedded: a typewriter face drawn from the Smith Premier typewriter of 1889 | Cutive Mono |
+
+The *Period typefaces* snippet embeds the three typefaces the theme was designed with, so it looks the same on every system. It's an optional snippet rather than part of `theme.css` because together those typefaces are about 250 KB, and Obsidian's community directory asks for themes to stay small. Install it like the other options (see [Options](#options)).
 
 Only the Latin character set is embedded. Text in other scripts falls back to your system's fonts.
 
-**Using your own fonts.** Fonts you choose under *Settings → Appearance* (interface font, text font and monospace font) take priority over the theme's. To turn all four embedded typefaces off at once, switch on the *Use Obsidian's fonts* option (see [Options](#options)).
+**Using your own fonts.** Fonts you choose under *Settings → Appearance* (interface font, text font and monospace font) take priority over the theme's. To hand every font back to Obsidian at once, switch on the *Use Obsidian's fonts* option (see [Options](#options)).
 
 ## Options
 
-Aether Works has six options. Each switches part of the theme off, and all of them work with Obsidian alone. No plugin is needed.
+Aether Works has seven snippets: six options that switch part of the theme off, and *Period typefaces*, which adds the embedded typefaces. All of them work with Obsidian alone. No plugin is needed.
 
 | Option | What it does | Can be set per note |
 | --- | --- | --- |
-| Use Obsidian's fonts | Replaces the four embedded typefaces with your Obsidian font choices | No |
+| Period typefaces | Embeds Playfair Display, IM Fell English and Cinzel (about 250 KB); see [Typefaces](#typefaces) | No |
+| Use Obsidian's fonts | Replaces the theme's fonts with your Obsidian font choices | No |
 | Plain leather | Flat colour instead of leather grain and damask | No |
 | No stitching | Removes the running stitch around the sidebars and drawers | No |
 | No Roman numerals | Removes the numerals from section headings and the Outline | Yes |
@@ -154,11 +157,11 @@ Aether Works has six options. Each switches part of the theme off, and all of th
 Each option is a small CSS snippet, a feature built into Obsidian:
 
 1. Get the snippet files: `aether-works-snippets.zip` on the latest release, or the repository's `snippets` folder.
-2. In your vault, open the hidden `.obsidian` folder and then `snippets` (create it if it isn't there), and copy in the files you want. You can copy all six; nothing changes until a snippet is switched on.
+2. In your vault, open the hidden `.obsidian` folder and then `snippets` (create it if it isn't there), and copy in the files you want. You can copy all seven; nothing changes until a snippet is switched on.
 3. In Obsidian, open *Settings → Appearance*, scroll to **CSS snippets** and open it. If the snippets don't appear yet, select the refresh button.
 4. Switch on the options you want.
 
-![Obsidian's CSS snippets page in light mode, listing six snippets named "Aether Works - No Roman numerals", "No stitching", "Plain bullets", "Plain leather", "Plain title" and "Use Obsidian's fonts", each with a toggle; two toggles are on.](docs/images/08-snippets-light.png)
+![Obsidian's CSS snippets page in light mode, listing seven snippets named "Aether Works - No Roman numerals", "No stitching", "Period typefaces", "Plain bullets", "Plain leather", "Plain title" and "Use Obsidian's fonts", each with a toggle; two toggles are on.](docs/images/08-snippets-light.png)
 
 *The CSS snippets page, in light mode. Each option has its own "Aether Works - …" switch. In the theme, a switch that is on shows a verdigris track and one that is off shows a copper knob in a steel slot. Here "No Roman numerals" and "Plain title" are on. The refresh and folder buttons above the list reload the snippets and open the snippets folder.*
 
@@ -186,13 +189,13 @@ cssclasses:
 
 ### Style Settings (optional)
 
-If you already use the Style Settings community plugin, the same six options also appear there, under *Aether Works*. It's only a convenience: the theme never needs it, and the snippets and `cssclasses` do the same job.
+If you already use the Style Settings community plugin, the six options also appear there, under *Aether Works*. It's only a convenience: the theme never needs it, and the snippets and `cssclasses` do the same job.
 
 ## Phones, tablets and small windows
 
-![The theme on a phone in dark mode: the note title wrapped over two lines in gold under a brass header strip, the properties, and the start of the first paragraph, above Obsidian's floating navigation bar.](docs/images/06-phone-dark.png)
+![The theme on a phone in dark mode: the note title in gold under a brass header strip, with its kicker and flourish, the properties, and the start of the first paragraph, above Obsidian's floating navigation bar.](docs/images/06-phone-dark.png)
 
-*A phone in dark mode. The page fills the screen with no margin around it. The brass plaque header across the top carries the button for the left drawer and the edit and menu buttons. The title wraps cleanly over two lines. The properties keep their typewriter face, and the checkboxes are a little larger so they're easier to tap. Obsidian's floating navigation bar sits at the bottom.*
+*A phone in dark mode. The page fills the screen with no margin around it. The brass plaque header across the top carries the button for the left drawer and the edit and menu buttons. The title keeps its kicker and flourish. The properties keep their typewriter face, and the checkboxes are a little larger so they're easier to tap. Obsidian's floating navigation bar sits at the bottom.*
 
 ![The left drawer on a phone in light mode: tan saddle leather with a stitched edge, the folder tree in dark ink, the open note as a copper plate, and the vault name on a brass plate at the bottom with a settings button.](docs/images/07-phone-drawer-light.png)
 

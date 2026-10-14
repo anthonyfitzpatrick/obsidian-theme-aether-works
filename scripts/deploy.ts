@@ -25,4 +25,4 @@ const retired = readdirSync(snippetFolder).filter((file) => file.startsWith(SNIP
 for (const file of retired) rmSync(join(snippetFolder, file));
 for (const file of snippets) copyFileSync(join(projectRoot, "snippets", file), join(snippetFolder, file));
 if (retired.length > 0) console.log(`Removed retired snippets: ${retired.join(", ")}`);
-console.log(`Deployed to ${themeFolder}, with ${snippets.length} option snippets in ${snippetFolder}`);
+console.log(`Deployed to ${themeFolder}, with ${snippets.length} snippets in ${snippetFolder}`);

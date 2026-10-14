@@ -14,7 +14,7 @@
   --nav-heading-color-collapsed: var(--aw-on-leather-muted);
   --nav-heading-color-collapsed-hover: var(--aw-on-leather);
   --nav-tag-color: var(--aw-on-leather-muted);
-  /* IM Fell's small lowercase reads two sizes below its nominal size, so the panels run a
+  /* The period serifs have small lowercase that reads below its nominal size, so the panels run a
      step larger than Obsidian's 13px, all text at one size, counts and badges one step down.
      Phones keep Obsidian's own, already larger, drawer sizes. */
   --nav-item-size: 15px;
@@ -51,7 +51,7 @@
   background: var(--aw-damask), var(--aw-leather-dark);
 }
 
-/* Title bar (custom frame, Windows and Linux): engraved brass, Cinzel lettering */
+/* Title bar (custom frame, Windows and Linux): engraved brass, plaque lettering */
 .titlebar {
   background: var(--aw-brass-gradient-h);
   border-bottom: 1px solid var(--aw-brass-shadow);

@@ -3,12 +3,17 @@ body {
   /* The option variables (fonts, textures, stitching, numerals, bullets, title) get their
      defaults from scripts/options.ts, which generates them into theme.css. */
 
-  /* The embedded faces are declared by scripts/build.ts under "Aether …" family names, so
-     they never collide with copies the user has installed. Each stack ends in a system
-     fallback with the same character. */
-  --aw-face-heading: "Aether Playfair", Georgia, "Times New Roman", serif;
-  --aw-face-body: "Aether Fell", Georgia, serif;
-  --aw-face-plaque: "Aether Cinzel", "Trajan Pro", Georgia, serif;
+  /* Period-style serifs most systems already have: Bodoni or Didot for headings, Baskerville
+     or Palatino for text, Copperplate for engraved plates. The optional "Period typefaces"
+     snippet puts the embedded Playfair Display, IM Fell English and Cinzel in front of
+     these. The typewriter face, Cutive Mono, is always embedded. Embedded faces use
+     "Aether …" family names, so they never collide with copies the user has installed. */
+  --aw-system-heading: "Bodoni 72", Didot, "Bodoni MT", Baskerville, "Palatino Linotype", Georgia, serif;
+  --aw-system-body: Baskerville, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --aw-system-plaque: Copperplate, "Copperplate Gothic Bold", "Copperplate Gothic", "Trajan Pro", Baskerville, serif;
+  --aw-face-heading: var(--aw-system-heading);
+  --aw-face-body: var(--aw-system-body);
+  --aw-face-plaque: var(--aw-system-plaque);
   --aw-face-mono: "Aether Typewriter", "Courier Prime", "Courier New", monospace;
 
   /* Monospace goes through Obsidian's own slot, so a font the user picks still wins */

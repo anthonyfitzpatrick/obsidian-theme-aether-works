@@ -7,15 +7,17 @@ import assert from "node:assert/strict";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "node:test";
-import { snippetFileName, THEME_OPTIONS } from "../scripts/options.ts";
+import { PERIOD_SNIPPET_TITLE } from "../scripts/fonts.ts";
+import { SNIPPET_PREFIX, snippetFileName, THEME_OPTIONS } from "../scripts/options.ts";
 import { projectRoot } from "../scripts/project.ts";
 import { readProjectFile, readSources } from "./helpers.ts";
 
 const sources = readSources();
 const theme = readProjectFile("theme.css");
 
-test("snippets/ holds exactly one snippet per option", () => {
-  assert.deepEqual(readdirSync(join(projectRoot, "snippets")).sort(), THEME_OPTIONS.map(snippetFileName).sort());
+test("snippets/ holds one snippet per option, plus the period-typefaces snippet", () => {
+  const expected = [...THEME_OPTIONS.map(snippetFileName), `${SNIPPET_PREFIX}${PERIOD_SNIPPET_TITLE}.css`];
+  assert.deepEqual(readdirSync(join(projectRoot, "snippets")).sort(), expected.sort());
 });
 
 // Obsidian's directory flags style queries as only partly supported by older versions.

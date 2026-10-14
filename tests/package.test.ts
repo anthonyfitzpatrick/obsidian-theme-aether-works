@@ -46,10 +46,11 @@ test("theme.css loads nothing from the network", () => {
   assert.doesNotMatch(css, /url\(\s*["']?(https?:)?\/\//);
 });
 
-// Obsidian's directory warns when theme.css is large; the embedded fonts are most of it.
-// 0.1.0 shipped at 376 KB; this keeps the trimmed size from creeping back up.
-test("theme.css stays under 330 KB, fonts included", () => {
-  assert.ok(Buffer.byteLength(css) < 330_000, `theme.css is ${Buffer.byteLength(css)} bytes`);
+// Obsidian's directory warned "Theme CSS file is larger than recommended" at 376 KB and still at
+// 314 KB, without saying where the line is. The large faces now live in the optional
+// period-typefaces snippet; this keeps theme.css well clear of any plausible threshold.
+test("theme.css stays under 100 KB", () => {
+  assert.ok(Buffer.byteLength(css) < 100_000, `theme.css is ${Buffer.byteLength(css)} bytes`);
 });
 
 // Obsidian's manifest rules for theme names: Basic Latin, no punctuation except hyphens,
