@@ -98,7 +98,9 @@ Every text colour is tested against WCAG 2 in both modes. Body text, links, side
 
 ## Installing
 
-Aether Works isn't in Obsidian's community directory yet. To install it by hand:
+Aether Works is in Obsidian's community theme directory. In Obsidian, open *Settings → Appearance → Themes → Manage*, search for **Aether Works** and choose **Install and use**. Or open its [page in the directory](https://community.obsidian.md/themes/aether-works).
+
+To install it by hand instead:
 
 1. Download `manifest.json` and `theme.css` from the latest release (they're also in this repository's root).
 2. Put them in a folder named exactly `Aether Works` inside `<your vault>/.obsidian/themes/`.

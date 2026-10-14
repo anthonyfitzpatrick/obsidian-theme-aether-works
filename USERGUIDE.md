@@ -19,13 +19,20 @@ Aether Works dresses Obsidian as a Victorian instrument maker's workshop: parchm
 
 ## Installing and updating
 
-Aether Works isn't in Obsidian's community directory yet, so it's installed by hand:
+Aether Works is in Obsidian's community theme directory:
+
+1. In Obsidian, open *Settings → Appearance*, and next to **Themes** choose **Manage**.
+2. Search for **Aether Works** and choose **Install and use**.
+
+Obsidian tells you when an update is available, under *Settings → Appearance → Themes*. The option snippets aren't part of the directory install; see [Options](#options) for how to add them.
+
+To install it by hand instead:
 
 1. Download `manifest.json` and `theme.css` from the latest release (they're also in the root of the repository).
 2. In your vault, open the hidden `.obsidian` folder and then `themes`. Create a folder named exactly **Aether Works**; Obsidian matches a theme by its folder name. Put both files in it.
 3. In Obsidian, open *Settings → Appearance*, and under **Themes** choose **Aether Works**.
 
-To update, replace both files with the new ones. Obsidian reads a theme once, when it's chosen, so switch to another theme and back (or restart Obsidian) to see the update.
+If you installed it by hand, update it by replacing both files with the new ones. Obsidian reads a theme once, when it's chosen, so switch to another theme and back (or restart Obsidian) to see the update.
 
 To remove the theme, choose another theme and delete the `Aether Works` folder. If you installed the option snippets, delete the files starting "Aether Works - " from `.obsidian/snippets` too.
 
